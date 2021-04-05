@@ -1,0 +1,30 @@
+@import "https://fonts.googleapis.com/css?family=Share+Tech+Mono";
+@import "https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&display=swap";
+:root {
+  --main-bg-color: white;/*#08313A;*/
+  --main-text-color: #00563f; /*#ff4500; /*#5CD85A;*/
+  --background-color2: #1A5653;
+}
+
+::placeholder{
+  color: var(--main-text-color);
+}
+hr {
+  border-color: var(--main-text-color);
+}
+body{
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  font-family: 'Kiwi Maru', serif;
+}
+#convertField{
+  background-color: var(--background-color2);
+    color: var(--main-text-color);
+  border-radius: 8px;
+}
+
+#convert{
+  background-color: var(--background-color2);
+  color: var(--main-text-color);
+  border-radius: 5px;
+}
