@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "914c0977-1c18-4018-beda-b562c8d6a7a4",
+		"name": "GET suite",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Convert 10L (valid input)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Convert 10L\", function () {\r",
+							"    var my_json = pm.response.json();\r",
+							"    pm.expect(my_json).to.be.an(\"object\");\r",
+							"    pm.expect(my_json.initNum).to.be.eql(10);\r",
+							"    pm.expect(my_json.initUnit).to.be.eql(\"L\")\r",
+							"    pm.expect(my_json.returnNum).to.be.eql(2.64172);\r",
+							"    pm.expect(my_json.returnUnit).to.be.eql(\"gal\");\r",
+							"    pm.expect(my_json.string).to.be.eql(\"10 liters converts to 2.64172 gallons\"); \r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://imperialmetricconverter.glitch.me/api/convert?input=10L",
+					"protocol": "https",
+					"host": [
+						"imperialmetricconverter",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"api",
+						"convert"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "10L"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Convert 32g (invalid input unit)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Invalid Unit return\", function () {\r",
+							"    pm.response.to.have.body(\"invalid unit\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://imperialmetricconverter.glitch.me/api/convert?input=32g",
+					"protocol": "https",
+					"host": [
+						"imperialmetricconverter",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"api",
+						"convert"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "32g"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Convert 3/7.2/4kg (invalid number)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Return invalid number\", function () {\r",
+							"    pm.response.to.have.body(\"invalid number\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://imperialmetricconverter.glitch.me/api/convert?input=3/7.2/4kg",
+					"protocol": "https",
+					"host": [
+						"imperialmetricconverter",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"api",
+						"convert"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "3/7.2/4kg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Convert 3/7.2/4kilomegagram (invalid number and unit)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Returns invalid number and unit\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"invalid number and unit\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://imperialmetricconverter.glitch.me/api/convert?input=3/7.2/4kilomegagram",
+					"protocol": "https",
+					"host": [
+						"imperialmetricconverter",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"api",
+						"convert"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "3/7.2/4kilomegagram"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Convert kg (no number)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.initNum).to.eql(1);\r",
+							"    pm.expect(jsonData.initUnit).to.eql(\"kg\");\r",
+							"    pm.expect(jsonData.returnUnit).to.eql(\"lbs\");\r",
+							"    pm.expect(jsonData.returnNum).to.eql(2.20462);\r",
+							"    pm.expect(jsonData.string).to.eql(\"1 kilograms converts to 2.20462 pounds\");\r",
+							"\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://imperialmetricconverter.glitch.me/api/convert?input=kg",
+					"protocol": "https",
+					"host": [
+						"imperialmetricconverter",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"api",
+						"convert"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "kg"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
