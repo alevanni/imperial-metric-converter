@@ -1,6 +1,8 @@
 **FreeCodeCamp**- Information Security and Quality Assurance
 ------
-
+![My preview](https://lh3.googleusercontent.com/Odav0dWTgXukH6yRefLoi0d2SymHbijLxqMgXn8h17_aV7BDoWgPKV24i1LXwvWBtZfAFlwOz6Jnhpswzd8ublf9fsPGPY0uoahAsZzl_J87CzRyGBaboX38QE3quvrMprhPFyt_6A=w2400)
+ The project can be found at: https://imperialmetricconverter.glitch.me
+ 
  - Complete the necessary conversion logic in /controllers/convertHandler.js
  - Complete the necessary routes in /routes/api.js
  - Copy the sample.env file to .env and set the variables appropriately
