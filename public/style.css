@@ -18,13 +18,13 @@ body{
   font-family: 'Kiwi Maru', serif;
 }
 #convertField{
-  background-color: var(--background-color2);
+ /* background-color: var(--background-color2);*/
     color: var(--main-text-color);
   border-radius: 8px;
 }
 
 #convert{
   background-color: var(--background-color2);
-  color: var(--main-text-color);
+  color: white;/*var(--main-text-color);*/
   border-radius: 5px;
 }
