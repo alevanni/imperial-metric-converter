@@ -9,6 +9,7 @@
  - To run the tests uncomment NODE_ENV=test in your .env file
  - To run the tests in the console, use the command npm run test. To open the Repl.it console, press Ctrl+Shift+P (Cmd if on a Mac) and type "open shell"
  - Postman test cases can be found in /tests/GET suite.postman_collection.json
+ - Postman test results can be found in /tests/GET suite.postman_test_run.json
  - A very basic manual test case template can be found in /tests/IMC_TestCase.ods
 Write the following tests in tests/1_unit-tests.js:
 
